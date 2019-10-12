@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+import { BrowserRouter as Router, NavLink, Route } from "react-router-dom";
 
 const Home = () => <h2>Home Page</h2>;
 const News = () => <h2>Latest News</h2>;
@@ -14,17 +14,20 @@ class App extends Component {
           <header>
             <nav>
               <ul>
-                {/* <li><a href="/">start</a></li>
-                <li><a href="/news">news</a></li>
-                <li><a href="/contact">contact</a></li> */}
                 <li>
-                  <Link to="/">Start</Link>
+                  <NavLink to="/" exact activeClassName="home_selected">
+                    Start
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/news">News</Link>
+                  <NavLink to="/news" activeClassName="news_selected">
+                    News
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/contact">Contact</Link>
+                  <NavLink to="/contact" activeClassName="contact_selected">
+                    Contact
+                  </NavLink>
                 </li>
               </ul>
             </nav>
